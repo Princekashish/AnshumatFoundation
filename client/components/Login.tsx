@@ -23,7 +23,7 @@ export default function Login() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
-        const request = await axios.post("http://localhost:8000/auth/v1/login", user, {
+        const request = await axios.post("https://hrdashboard-r3uf.onrender.com/auth/v1/login", user, {
             withCredentials: true
         })
         if (request.status === 202) router.push("/dashboard");

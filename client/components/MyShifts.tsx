@@ -54,7 +54,7 @@ export default function MyShifts({ role }: userRole) {
         };
         const fetchUser = async () => {
             try {
-                const res = await axios.get("http://localhost:8000/employees", {
+                const res = await axios.get("https://hrdashboard-r3uf.onrender.com/employees", {
                     withCredentials: true,
                 });
 
