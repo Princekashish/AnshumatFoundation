@@ -4,8 +4,8 @@ import axios from "axios";
 import { ChevronUp, User } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
-import { FiChevronDown, FiLogOut } from "react-icons/fi";
+import { useEffect, useState } from "react";
+import { FiLogOut } from "react-icons/fi";
 
 type User = {
     email: string;
