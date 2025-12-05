@@ -21,7 +21,7 @@ export default function Navbar() {
     useEffect(() => {
         const userProfile = async () => {
             try {
-                const request = await axios.get("http://localhost:8000/auth/v1/profile", {
+                const request = await axios.get("https://hrdashboard-r3uf.onrender.com/auth/v1/profile", {
                     withCredentials: true,
                 });
                 setUser(request.data.user);
@@ -35,7 +35,7 @@ export default function Navbar() {
     const handleLogout = async () => {
         try {
             await axios.post(
-                "http://localhost:8000/auth/v1/logout",
+                "https://hrdashboard-r3uf.onrender.com/auth/v1/logout",
                 {},
                 { withCredentials: true } // important to clear the cookie
             );

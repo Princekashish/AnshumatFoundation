@@ -19,7 +19,7 @@ export default function Dashboard() {
     useEffect(() => {
         const userProfile = async () => {
             try {
-                const request = await axios.get("http://localhost:8000/auth/v1/profile", {
+                const request = await axios.get("https://hrdashboard-r3uf.onrender.com/auth/v1/profile", {
                     withCredentials: true,
                 });
                 setUser(request.data.user);

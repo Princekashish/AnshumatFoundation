@@ -29,7 +29,7 @@ export default function CreateShift({ role, _id }: userRole) {
     useEffect(() => {
         const fetchEmployees = async () => {
             try {
-                const res = await axios.get("http://localhost:8000/employees", {
+                const res = await axios.get("https://hrdashboard-r3uf.onrender.com/employees", {
                     withCredentials: true,
                 });
                 setEmployees(res.data.employeelist || []);
@@ -66,7 +66,7 @@ export default function CreateShift({ role, _id }: userRole) {
                 end_time: endTime,
             };
 
-            await axios.post("http://localhost:8000/shift", payload, {
+            await axios.post("https://hrdashboard-r3uf.onrender.com/shift", payload, {
                 withCredentials: true,
             });
 

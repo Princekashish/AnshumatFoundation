@@ -41,7 +41,7 @@ export default function MyShifts({ role }: userRole) {
     useEffect(() => {
         const fetchShifts = async () => {
             try {
-                const res = await axios.get("http://localhost:8000/shift", {
+                const res = await axios.get("https://hrdashboard-r3uf.onrender.com/shift", {
                     withCredentials: true,
                 });
 
@@ -93,7 +93,6 @@ export default function MyShifts({ role }: userRole) {
 
     const formatTime = (isoString: string) => {
         const date = new Date(isoString);
-        // Returns "HH:mm" format
         return date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
     };
 
