@@ -23,10 +23,19 @@ export default function Login() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
-        const request = await axios.post("https://hrdashboard-r3uf.onrender.com/auth/v1/login", user, {
-            withCredentials: true
-        })
-        if (request.status === 202) router.push("/dashboard");
+        try {
+            const request = await axios.post(
+                "https://hrdashboard-r3uf.onrender.com/auth/v1/login",
+                user,
+                { withCredentials: true }
+            );
+
+            if (request.status === 202) {
+                router.push("/dashboard");
+            }
+        } catch (error) {
+            console.log("Login failed", error);
+        }
     }
     return (
         <div className="w-screen h-screen flex items-center justify-center bg-gray-100">
