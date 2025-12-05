@@ -16,8 +16,9 @@ export const userController = {
       const { user, token } = await userService.login(req.body);
       res.cookie("token", token, {
         httpOnly: true,
-        secure: false,
-        sameSite: "strict",
+        secure: true,
+        sameSite: "none",
+        path: "/",
         maxAge: 24 * 60 * 60 * 1000,
       });
       return res.status(202).json({ token, user });
