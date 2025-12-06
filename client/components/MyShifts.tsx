@@ -41,7 +41,7 @@ export default function MyShifts({ role }: userRole) {
     useEffect(() => {
         const fetchShifts = async () => {
             try {
-                const res = await axios.get("https://hrdashboard-r3uf.onrender.com/shift", {
+                const res = await axios.get("/shift", {
                     withCredentials: true,
                 });
 
@@ -54,7 +54,7 @@ export default function MyShifts({ role }: userRole) {
         };
         const fetchUser = async () => {
             try {
-                const res = await axios.get("https://hrdashboard-r3uf.onrender.com/employees", {
+                const res = await axios.get("/employees", {
                     withCredentials: true,
                 });
 

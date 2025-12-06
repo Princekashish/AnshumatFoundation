@@ -22,7 +22,7 @@ export default function Profile() {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const res = await axios.get("https://hrdashboard-r3uf.onrender.com/auth/v1/profile", {
+        const res = await axios.get("/auth/v1/profile", {
           withCredentials: true,
         });
         setProfile(res.data.user);
@@ -46,7 +46,7 @@ export default function Profile() {
 
     try {
       const res = await axios.put(
-        "https://hrdashboard-r3uf.onrender.com/auth/v1/update",
+        "/auth/v1/update",
         editName,
         { withCredentials: true }
       );

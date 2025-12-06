@@ -5,6 +5,7 @@ import CreateShift from "@/components/CreateShift";
 import MyShifts from "@/components/MyShifts";
 import Sidebar, { ActiveType } from "@/components/Sidebar"
 import axios from "axios";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 type User = {
@@ -12,6 +13,7 @@ type User = {
     role: string,
 }
 export default function Dashboard() {
+    const router = useRouter();
     const [active, setActive] = useState<ActiveType>("myShifts");
     const [user, setUser] = useState<User>({ _id: "", role: "" });
 
@@ -19,17 +21,18 @@ export default function Dashboard() {
     useEffect(() => {
         const userProfile = async () => {
             try {
-                const request = await axios.get("https://hrdashboard-r3uf.onrender.com/auth/v1/profile", {
+                const request = await axios.get("/auth/v1/profile", {
                     withCredentials: true,
                 });
                 setUser(request.data.user);
 
             } catch (err) {
                 console.error("Error fetching user profile", err);
+                router.push("/");
             }
         };
         userProfile();
-    }, []);
+    }, [router]);
 
 
 

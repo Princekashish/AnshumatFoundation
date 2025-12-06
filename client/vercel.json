@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/auth/:path*",
+      "destination": "https://hrdashboard-r3uf.onrender.com/auth/:path*"
+    },
+    {
+      "source": "/api/:path*",
+      "destination": "https://hrdashboard-r3uf.onrender.com/:path*"
+    }
+  ]
+}

@@ -24,14 +24,14 @@ export default function Login() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
         try {
-            const request = await axios.post(
-                "https://hrdashboard-r3uf.onrender.com/auth/v1/login",
+            const response = await axios.post(
+                "/auth/v1/login",
                 user,
                 { withCredentials: true }
             );
 
-            if (request.status === 202) {
-                router.push("/dashboard");
+            if (response.status === 202) {
+                router.push("/dashboard"); // redirect to dashboard
             }
         } catch (error) {
             console.log("Login failed", error);

@@ -30,7 +30,7 @@ export default function AllShifts() {
   useEffect(() => {
     const fetchEmployees = async () => {
       try {
-        const res = await axios.get("https://hrdashboard-r3uf.onrender.com/employees", {
+        const res = await axios.get("/employees", {
           withCredentials: true,
         });
         setEmployees(res.data.employeelist || []);
@@ -51,7 +51,7 @@ export default function AllShifts() {
 
     try {
       const res = await axios.get(
-        `https://hrdashboard-r3uf.onrender.com/shift?employeeCode=${employeeCode}`,
+        `/shift?employeeCode=${employeeCode}`,
         { withCredentials: true }
       );
 
@@ -67,7 +67,7 @@ export default function AllShifts() {
     if (!confirm("Are you sure you want to delete this shift?")) return;
 
     try {
-      await axios.delete("https://hrdashboard-r3uf.onrender.com/shift", {
+      await axios.delete("/shift", {
         data: { shiftId },
         withCredentials: true,
       });
