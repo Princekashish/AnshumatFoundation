@@ -29,7 +29,7 @@ export default function CreateShift({ role, _id }: userRole) {
     useEffect(() => {
         const fetchEmployees = async () => {
             try {
-                const res = await axios.get("/employees", {
+                const res = await axios.get("/api/employees", {
                     withCredentials: true,
                 });
                 setEmployees(res.data.employeelist || []);
@@ -66,7 +66,7 @@ export default function CreateShift({ role, _id }: userRole) {
                 end_time: endTime,
             };
 
-            await axios.post("/shift", payload, {
+            await axios.post("/api/shift", payload, {
                 withCredentials: true,
             });
 
